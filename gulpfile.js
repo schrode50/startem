@@ -6,7 +6,7 @@ const eslint = require('gulp-eslint');
 var lintFiles = ['index.js', 'gulpfile.js', 'lib/**/*.js', 'gulpfile.js'];
 var testFiles = ['./lib/*.js', 'test/tests.js'];
 
-gulp.task('test', () => {
+gulp.task('testz:mocha', () => {
   gulp.src(testFiles)
   .pipe(mocha({ reporter: 'nyan' }));
 });
