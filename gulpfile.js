@@ -3,11 +3,11 @@ const mocha = require('gulp-mocha');
 const eslint = require('gulp-eslint');
 
 
-var lintFiles = ['index.js', 'gulpfile.js', 'lib/**/*.js', 'handlers.js', 'gulpfile.js'];
-var testFiles = ['server.js', 'lib/**/*.js', 'test/tests.js'];
+var lintFiles = ['index.js', 'gulpfile.js', 'lib/**/*.js', 'gulpfile.js'];
+var testFiles = ['./lib/*.js', 'test/tests.js'];
 
 gulp.task('test', () => {
-  gulp.src([testFiles], { read: false })
+  gulp.src(testFiles)
   .pipe(mocha({ reporter: 'nyan' }));
 });
 
@@ -20,9 +20,9 @@ gulp.task('lint', () => {
 
 gulp.task('watch', () => {
   gulp.watch(lintFiles, ['lint']);
-  gulp.watch(testFiles, ['test']);
+  // gulp.watch(testFiles, ['test']);
 });
 
-gulp.task('default', ['lint', 'test', 'watch'], () => {
+gulp.task('default', ['lint', 'watch'], () => {
   console.log('HOLY CRAP THAT WORKED!?!?!?!?');
 });
