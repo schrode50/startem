@@ -1,3 +1,4 @@
 const server = require(__dirname + '/lib/server');
+const router = require(__dirname + '/lib/router');
 
-server.start();
+server.start(router.route);
